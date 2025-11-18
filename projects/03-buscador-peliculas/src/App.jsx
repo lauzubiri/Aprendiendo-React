@@ -1,11 +1,12 @@
 import './App.css'
-import results from './mocks/results.json'
 import { Movies } from './components/renderMovies'
+import { useMovies } from './hooks/useMovies'
+
+
+
 function App () {
   
-
-  const movies = results.Search
-
+  const {movies: mappedMovies} = useMovies()
 
   return (
     <>
@@ -18,7 +19,7 @@ function App () {
           </form>
         </header>
         <main>
-          <Movies movies={movies}/>
+          <Movies movies={mappedMovies}/>
         </main>
       </div>
     </>
