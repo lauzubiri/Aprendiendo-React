@@ -10,6 +10,8 @@ El objetivo es documentar mi aprendizaje, desde los fundamentos hasta conceptos 
 
 **Mouse Follower** | Efecto visual siguiendo el puntero. | `useEffect`, Eventos |  |
 
+**Prueba Técnica Gatitos** | Generador de imágenes con API | Custom Hooks, Fetching |  |
+
 **Prueba Técnica Cine** | Buscador de películas con API (OMDb). | `useRef`, `useMemo`, Debounce |  |
 
 
