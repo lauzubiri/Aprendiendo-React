@@ -1,16 +1,14 @@
-import results from '../mocks/results.json'
-
 function ListOfMovies ({ movies }) {
     
-  return (<ul>
-    {movies.map(movie => (
-      <li key={movie.id}>
+  return (<div className='peliculas'>
+    {movies?.map(movie => (
+      <li className='pelicula' key={movie.id}>
         <h3>{movie.title}</h3>
         <img src={movie.poster} alt={movie.Title} />
         <p>{movie.year}</p>
       </li>
     ))}
-  </ul>)
+  </div>)
 }
 
 
@@ -21,7 +19,7 @@ function NoSearchResults () {
 }
 
 export function Movies ({movies}) {
-  const hasMovies = results.Response
+  const hasMovies = movies?.length > 0
   return (
     hasMovies
       ? <ListOfMovies movies={movies} />

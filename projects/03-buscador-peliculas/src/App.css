@@ -1,15 +1,37 @@
-body {
-  font-family: system-ui;
-  display: flex;
-  justify-content: center;
-}
-
 form {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
-.page {
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.peliculas {
+  gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  width: 100%;
+}
+
+.pelicula {
+  text-align: center;
+}
+
+.error {
+  border: 1px solid red;
+}
+
+li {
   display: flex;
   flex-direction: column;
   align-items: center;

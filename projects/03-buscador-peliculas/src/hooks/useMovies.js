@@ -1,14 +1,37 @@
-import results from '../mocks/results.json'
+/* eslint-disable react-hooks/exhaustive-deps */
+import { useCallback, useMemo, useRef, useState } from 'react'
+import { searchMovies } from '../services/movies'
 
-export function useMovies () {
-  const movies = results.Search
+export function useMovies ({search, sort}) {
+  const [movies, setMovies] = useState([])
+  const [loading, setLoading] = useState()
+  const [error, setError] = useState()
+  const previousSearch = useRef({search})
 
-  const mappedMovies = movies?.map(movie => ({
-    id: movie.imdbID,
-    title: movie.Title,
-    year: movie.Year,
-    poster: movie.Poster
-  }))
 
-  return { movies: mappedMovies }
+  const getMovies = useCallback(async ({search}) =>{
+    if (search === previousSearch.current) return
+    try {
+      setLoading(true)
+      setError(null)
+      previousSearch.current = search
+      const newMovies = await searchMovies({ search })
+      setMovies(newMovies)
+    } catch (e) {
+      setError(e.message)
+    } finally {
+      setLoading(false)
+    }
+    
+  }, [{search}])
+  
+  const sortedMovies = useMemo(() => {
+    if (movies)
+      return sort ? [...movies].sort((a, b) => {
+        const titleA = a?.title || ''
+        const titleB = b?.title || ''
+        return titleA.localeCompare(titleB)
+      }     ) : movies
+  },[movies, sort])
+  return { movies: sortedMovies, getMovies, loading, error }
 }
