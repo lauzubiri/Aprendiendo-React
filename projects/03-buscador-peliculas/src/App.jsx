@@ -30,7 +30,7 @@ function App () {
   const handleChange = (event) => {
     const newSearch = event.target.value
     if (newSearch.startsWith(' ')) return
-    updateSearch(newSearch)
+    updateSearch(newSearch) 
     debouncedGetMovies(newSearch)
   }
 
