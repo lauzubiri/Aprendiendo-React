@@ -2,7 +2,7 @@
 
 Ecommerce
 
-- [x] Muestra una lista de productos que vienen de un JSON
+- [x] Muestra una lista de productos que vienen de https://api.escuelajs.co/api/v1/products
 - [x] Añade un filtro por categoría
 - [x] Añade un filtro por precio
 

@@ -1,0 +1,17 @@
+.filters {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.filters > div {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.range > span {
+  position: absolute;
+}
