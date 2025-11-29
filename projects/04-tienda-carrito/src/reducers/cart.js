@@ -6,7 +6,6 @@ export const CART_ACTION_TYPES = {
   CLEAR_CART: 'CLEAR_CART'
 }
 
-// update localStorage with state for cart
 export const updateLocalStorage = state => {
   window.localStorage.setItem('cart', JSON.stringify(state))
 }
@@ -30,7 +29,7 @@ const UPDATE_STATE_BY_ACTION = {
     const newState = [
       ...state,
       {
-        ...action.payload, // product
+        ...action.payload, 
         quantity: 1
       }
     ]
