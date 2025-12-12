@@ -6,7 +6,7 @@ El objetivo es documentar mi aprendizaje, desde los fundamentos hasta conceptos 
 
 ## 🚀 Proyectos
 
-**Tic Tac Toe** | El clásico juego con manejo de estado y lógica. | React, Hooks | https://calm-arithmetic-1f0867.netlify.app/ |
+**Tic Tac Toe** | El clásico juego con manejo de estado y lógica. | React, Hooks | https://tic-tac-toe-taro.netlify.app/ |
 
 **Mouse Follower** | Efecto visual siguiendo el puntero. | `useEffect`, Eventos |  |
 
